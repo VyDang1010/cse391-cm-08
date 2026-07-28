@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CampusMart — Filter (Buoi 7)</title>
+    <title>CampusMart — Module & Storage (Buoi 8)</title>
     <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
@@ -232,6 +232,26 @@
             <p>CampusMart - Cua hang do dung cong nghe cho sinh vien</p>
         </section>
 
+        <section id="add-product">
+            <h2>Them san pham</h2>
+            <form data-testid="cm-product-form">
+                <label>SKU <input name="sku" required></label>
+                <label>Ten <input name="name" required></label>
+                <label>Danh muc
+                    <select name="category_id" required>
+                        <option value="">-- Chon danh muc --</option>
+                        <option value="1">Ban phim</option>
+                        <option value="2">Chuot</option>
+                        <option value="3">Man hinh</option>
+                    </select>
+                </label>
+                <label>Gia <input name="price" type="number" required></label>
+                <label>So luong <input name="qty" type="number" value="0"></label>
+                <button type="submit">Them san pham</button>
+            </form>
+            <p id="product-form-msg" aria-live="polite"></p>
+        </section>
+
         <form>
             <p>
                 <label for="ct-name">Ho ten</label>
@@ -278,16 +298,18 @@
                     </p>
                 </fieldset>
             </form>
+            <p id="form-msg" aria-live="polite"></p>
         </section>
+
+        <ul data-testid="cm-subscriber-list"></ul>
     </main>
 
     <!-- Footer CampusMart - Catalog -->
     <footer>
-        <p>CSE391 - CampusMart UI - Buoi 7</p>
+        <p>CSE391 - CampusMart UI - Buoi 8</p>
     </footer>
 
-    <!-- CM_EXPECT product_count=8 filter_counts=8,3,3,2 first_sorted_sku=MS-03 -->
-    <script src="data.js"></script>
-    <script src="app.js"></script>
+    <!-- CM_EXPECT product_count=8 create_sku=MN-03 count_after=9 inventory_after=50380000 modules=data.js,helpers.js,app.js -->
+    <script type="module" src="app.js"></script>
 </body>
 </html>

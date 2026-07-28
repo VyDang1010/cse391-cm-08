@@ -1,10 +1,10 @@
-const categories = [
+export const categories = [
     { id: 1, name: "Ban phim" },
     { id: 2, name: "Chuot" },
     { id: 3, name: "Man hinh" },
 ];
 
-const products = [
+export const products = [
     { sku: "KB-01" , name: "Keychron K2" , category_id: 1 , price: 1890000 , qty: 3  },
     { sku: "KB-02" , name: "Akko 3087" , category_id: 1 , price: 1290000 , qty: 5  },
     { sku: "KB-03" , name: "Leopold FC660M" , category_id: 1 , price: 2750000 , qty: 2  },
