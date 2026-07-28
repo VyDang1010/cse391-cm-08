@@ -1,0 +1,210 @@
+/* Reset + tokens  */
+*, *::before, *::after {
+    box-sizing: border-box; 
+}
+
+:root {
+    --cm-primary: #0f766e;
+    --cm-bg: #f8fafc;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--cm-bg);
+    color: #1f2937;
+}
+
+/* Style bang san pham  */
+.cm-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cm-table th,
+.cm-table td {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+.cm-table thead {
+    background: var(--cm-primary);
+    color: white;
+}
+
+/* Header + nav  */
+.cm-header {
+    display: flex;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    background: var(--cm-primary);
+    color: white;
+    padding: 1rem;
+}
+
+.cm-nav ul {
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    gap: 0.75rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cm-nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.cm-nav a:hover {
+    text-decoration: underline;
+}
+
+.cm-grid {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); */
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+/* Zebra + Hover  */
+/* .cm-table tbody tr {
+    background: white !important
+} */
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.cm-table {
+    min-width: 640px;
+}
+
+.cm-table tbody tr:nth-child(even) {
+    background: #f1f5f9;
+}
+
+.cm-table tbody tr:hover {
+    background: #ccfbf1;
+}
+
+/* Form + Focus  */
+input,
+select,
+textarea {
+    width: 100%;
+    max-width: 24rem;
+    padding: 0.5rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--cm-primary);
+}
+
+button[type="submit"] {
+    background: var(--cm-primary);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background: #0b5c56
+}
+
+/* CSS card  */
+.cm-card{
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: box-shadow 0.2;
+}
+
+.cm-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cm-card img{
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.cm-card-price{
+    color: var(--cm-primary);
+    font-weight: 700;
+}
+
+/* Hero section  */
+.cm-hero {
+    padding: 2rem 1rem;
+    text-align: center;
+    background: white;
+}
+
+.cm-hero h2 {
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
+    color: var(--cm-primary);
+}
+
+.cm-btn {
+    display: inline-block;
+    background: var(--cm-primary);
+    color: white;
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.cm-btn:hover {
+    background: #0b5c56;
+}
+
+/* Query tablet 640px */
+@media (min-width: 640px){
+    .cm-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .cm-nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+    .cm-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Query desktop 1024px */
+@media (min-width: 1024px) {
+    .cm-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .cm-main {
+        width: 100%;
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+}

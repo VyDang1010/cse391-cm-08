@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusMart — Filter (Buoi 7)</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <!-- Header CampusMart - Catalog  -->
+    <header class="cm-header" data-testid="cm-brand-wrap">
+        <h1 data-testid="cm-brand">CampusMart</h1>
+        <nav class="cm-nav" data-testid="cm-nav" aria-label="Menu chinh">
+            <ul>
+                <li><a href="#home">Trang chu</a></li>
+                <li><a href="#products">San pham</a></li>
+                <li><a href="#about">Gioi thieu</a></li>
+                <li><a href="#subscribe">Dang ky</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero section  -->
+     <section class="cm-hero" id="hero">
+        <h2>Do choi cong nghe cho sinh vien</h2>
+        <a href="#products" class="cm-btn">Xem catalog</a>
+     </section>
+
+     <!-- Stats section -->
+      <section id="stats" data-testid="cm-stats" aria-live="polite">
+      </section>
+
+    <!-- Main CampusMart - Catalog  -->
+    <main class="cm-main" id="home">
+        <!-- Section Categories  -->
+        <section id="categories" aria-labelledby="cat-heading">
+            <h2 id="cat-heading">Danh muc</h2>
+            <ul data-testid="cm-category-list">
+                <li>Ban phim</li>
+                <li>Chuot</li>
+                <li>Man hinh</li>
+            </ul>
+        </section>
+
+        <!-- Section products -->
+        <section id="products" aria-labelledby="prod-heading">
+            <h2 id="prod-heading">San pham</h2>
+            
+            <img 
+                src="https://owlgaming.vn/wp-content/uploads/2023/02/ban-phim-co-keychron-k2-pro.jpg" 
+                alt="Ban phim Keychron K2"
+                width="120"
+                height="80"
+                />
+
+            <div class="cm-toolbar">
+                <div>
+                    <label for="filter-cat">Loc theo danh muc</label>
+                    <select id="filter-cat" data-testid="cm-filter-category">
+                        <option value="all">Tat ca</option>
+                        <option value="1">Ban phim</option>
+                        <option value="2">Chuot</option>
+                        <option value="3">Man hinh</option>
+                    </select>
+                </div>
+                <button type="button" id="sort-price">Gia tang dan</button>
+                <p data-testid="cm-visible-count"></p>
+            </div>
+
+            <div class="cm-grid" data-testid="cm-product-table"></div>
+
+            <div class="table-wrap">
+                <table class="cm-table">
+                    <caption>Danh sach san pham CORE</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">SKU</th>
+                            <th scope="col">Ten</th>
+                            <th scope="col">Danh muc</th>
+                            <th scope="col">Gia</th>
+                            <th scope="col">So luong</th>
+                            <th scope="col">Anh</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-testid="cm-product-row" data-sku="KB-01">
+                            <td>KB-01</td>
+                            <td>Keychron K2</td>
+                            <td>Ban phim</td>
+                            <td>1890000</td>
+                            <td>3</td>
+                            <td>
+                                <figure>
+                                    <img 
+                                        src="https://owlgaming.vn/wp-content/uploads/2023/02/ban-phim-co-keychron-k2-pro.jpg" 
+                                        alt="Ban phim Keychron K2"
+                                        width="120"
+                                        height="80"/>
+                                    <figcaption>KB-01</figcaption>
+                                </figure>
+                            </td>
+                        </tr>
+                        <tr data-testid="cm-product-row" data-sku="KB-02">
+                            <td>KB-02</td>
+                            <td>Akko 3087</td>
+                            <td>Ban phim</td>
+                            <td>1290000</td>
+                            <td>5</td>
+                            <td>
+                                <figure>
+                                    <img 
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4eVKXdW40dPILqzGN4-lAf7oHHKpqxO9evXE4z6KuczNkeF4ltq3FIn4&s=10" 
+                                        alt="Ban phim Akko 3087"
+                                        width="120"
+                                        height="80"/>
+                                    <figcaption>KB-02</figcaption>
+                                </figure>
+                            </td>
+                        </tr>
+                        <tr data-testid="cm-product-row" data-sku="MS-01">
+                            <td>MS-01</td>
+                            <td>Logitech M331</td>
+                            <td>Chuot</td>
+                            <td>290000</td>
+                            <td>10</td>
+                            <td>
+                                <figure>
+                                    <img 
+                                        src="https://anphat.com.vn/media/product/23240_logitech_m331_plus_silent_black_upweb_1.jpg" 
+                                        alt="Chuot Logitech M331"
+                                        width="120"
+                                        height="80"/>
+                                    <figcaption>MS-01</figcaption>
+                                </figure>
+                            </td>
+                        </tr>
+                        <tr data-testid="cm-product-row" data-sku="MS-02">
+                            <td>MS-02</td>
+                            <td>Razer Viper</td>
+                            <td>Chuot</td>
+                            <td>990000</td>
+                            <td>4</td>
+                            <td>
+                                <figure>
+                                    <img 
+                                        src="https://product.hstatic.net/200000722513/product/ci9f8k75_e9e8bebbbb164f648e7bf94d561919f7_master.png" 
+                                        alt="Chuot Razer Viper"
+                                        width="120"
+                                        height="80"/>
+                                    <figcaption>MS-02</figcaption>
+                                </figure>
+                            </td>
+                        </tr>
+                        <tr data-testid="cm-product-row" data-sku="KB-03">
+                            <td>KB-03</td>
+                            <td>Leopold FC660M</td>
+                            <td>Ban phim</td>
+                            <td>2750000</td>
+                            <td>2</td>
+                            <td>
+                                <figure>
+                                    <img 
+                                        src="https://owlgaming.vn/wp-content/uploads/2023/04/ban-phim-co-leopold-fc660m-bt-pd-coral-blue-f.jpg" 
+                                        alt="Ban phim Leopold FC660M"
+                                        width="120"
+                                        height="80"/>
+                                    <figcaption>KB-03</figcaption>
+                                </figure>
+                            </td>
+                        </tr>
+                        <tr data-testid="cm-product-row" data-sku="MS-03">
+                            <td>MS-03</td>
+                            <td>Xiaomi Silent</td>
+                            <td>Chuot</td>
+                            <td>250000</td>
+                            <td>8</td>
+                            <td>
+                                <figure>
+                                    <img 
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqV8No5Cxx_omIiNN3Som-qzDwFVLNIZ0N-RrIXZyhC3-l6GUusbvuUXE&s=10" 
+                                        alt="Chuot Xiaomi Silent"
+                                        width="120"
+                                        height="80"/>
+                                    <figcaption>MS-03</figcaption>
+                                </figure>
+                            </td>
+                        </tr>
+                        <tr data-testid="cm-product-row" data-sku="MN-01">
+                            <td>MN-01</td>
+                            <td>Dell 24 inch</td>
+                            <td>Man hinh</td>
+                            <td>3200000</td>
+                            <td>2</td>
+                            <td>
+                                <figure>
+                                    <img 
+                                        src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_238_2_6.png" 
+                                        alt="Man hinh Dell 24 inch"
+                                        width="120"
+                                        height="80"/>
+                                    <figcaption>MN-01</figcaption>
+                                </figure>
+                            </td>
+                        </tr>
+                        <tr data-testid="cm-product-row" data-sku="MN-02">
+                            <td>MN-02</td>
+                            <td>LG UltraFine</td>
+                            <td>Man hinh</td>
+                            <td>8500000</td>
+                            <td>1</td>
+                            <td>
+                                <figure>
+                                    <img 
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRogfm6DoHemnxZMuQZjTfnhyHh3oqKda-TPRkOkjG8bwaty8vF15kdujU&s=10" 
+                                        alt="Man hinh LG UltraFine"
+                                        width="120"
+                                        height="80"/>
+                                    <figcaption>MN-02</figcaption>
+                                </figure>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- <p>So san pham = 8</p>
+            <p data-testid="cm-inventory-total">Tong gia tri kho = 41380000</p> -->
+        </section>
+
+        <!-- Section about -->
+        <section id="about">
+            <h2>Gioi thieu</h2>
+            <p>CampusMart - Cua hang do dung cong nghe cho sinh vien</p>
+        </section>
+
+        <form>
+            <p>
+                <label for="ct-name">Ho ten</label>
+                <input id="ct-name" name="name" type="text"/>
+            </p>
+
+            <p>
+                <label for="ct-message">Noi dung</label>
+                <textarea name="message" id="ct-message" rows="4" required></textarea>
+            </p>
+
+            <button type="submit">Gui</button>
+        </form>
+
+        <!-- Section subscribe  -->
+        <section id="subscribe">
+            <h2>Dang ky nhan tin</h2>
+            <form data-testid="cm-subscribe-form" action="#" method="get">
+                <fieldset>
+                    <legend>Dang ky nhan tin</legend>
+
+                    <p>
+                        <label for="sub-name">Ho ten</label>
+                        <input id="sub-name" name="name" type="text" required minlength="2"/>
+                    </p>
+
+                    <p>
+                        <label for="sub-email">Email</label>
+                        <input id="sub-email" name="email" type="email" required/>
+                    </p>
+
+                    <p>
+                        <label for="sub-category">Danh muc quan tam</label>
+                        <select name="category_id" id="sub-category" required>
+                            <option value="">-- Chon danh muc --</option>
+                            <option value="1">Ban phim</option>
+                            <option value="2">Chuot</option>
+                            <option value="3">Man hinh</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <button type="submit">Dang ky</button>
+                    </p>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer CampusMart - Catalog -->
+    <footer>
+        <p>CSE391 - CampusMart UI - Buoi 7</p>
+    </footer>
+
+    <!-- CM_EXPECT product_count=8 filter_counts=8,3,3,2 first_sorted_sku=MS-03 -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
