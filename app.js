@@ -25,7 +25,7 @@ function render(list){
         const card = document.createElement("article");
         card.className = "cm-card";
         card.dataset.testid = "cm-product-row";
-        card.dataset.sku - p.sku;
+        card.dataset.sku = p.sku;
 
         const h3 = document.createElement("h3");
         h3.textContent = p.name;
